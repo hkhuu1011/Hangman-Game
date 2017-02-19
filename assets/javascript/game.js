@@ -167,6 +167,11 @@ document.onkeyup = function (event) {
     var onlyLettersNumbers = /[a-z][0-9]+/;
 
     //if valid, then all handleUserInput
+    if (onlyLettersNumbers == lazyRappers.currentWord[i]) {
+        return;
+    } else {
+       
+    }
 
     //else do nothing
     //regular expressions
