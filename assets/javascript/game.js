@@ -8,8 +8,6 @@ var lazyRappers = {
     losses: 0,
     currentWord: "",
     displayWord: "",
-    // onlyLettersNumbers: "",
-
 };
 
 
@@ -31,6 +29,7 @@ function startGame() {
             lazyRappers.displayWord += "_";
         } else {
             lazyRappers.displayWord += lazyRappers.currentWord[i];
+            console.log("display word= ",lazyRappers.displayWord);
         }
 
     }
@@ -67,6 +66,7 @@ function startScreen() {
 //Handling users letter guess
 function handleUserInput(userGuess) {
     console.log(userGuess);
+
 
     //Check to see if letter pressed was already used
     if (lazyRappers.usedLetters.indexOf(userGuess) === -1) {
@@ -116,8 +116,8 @@ function handleUserLosses(userGuess) {
     console.log(userGuess);
 
     //If lives hits 0, updates losses
-    if(lazyRappers.livesRemaining == 0) {
-        lazyRappers.currentWord -= 1;
+    if(lazyRappers.livesRemaining === 0) {
+        lazyRappers.currentWord !== 1;
         console.log("end round");
 
         // lazyRappers.losses++;
@@ -132,7 +132,6 @@ function handleUserLosses(userGuess) {
 //Updating wins when rapper is guessed right
 function handleUserWins(userGuess) {
     console.log(userGuess);
-
     //If the rapper is guessed right, update wins
     for (var i = 0; i < lazyRappers.currentWord.length; i++) {
         if(lazyRappers.currentWord == lazyRappers.displayWord) {
@@ -146,20 +145,29 @@ function handleUserWins(userGuess) {
     }
 }
 
-//Go to next round
-function handleNextRound(userGuess) {
-    console.log(userGuess);
 
-}
+//Go to next round
+// function handleNextRound(userGuess) {    
+//     // console.log(userGuess);
+//     // lazyRappers.displayWord = "";
+//     // // $("#displayWord").text("");
+
+//     // startGame();
+
+  
+
+// }
 
 //Grabbing user input
 document.onkeyup = function (event) {
     var userGuess = event.key.toUpperCase();
 
-    //handle only letters and numbers
 
+    //handle only letters and numbers
+    var onlyLettersNumbers = /[a-z][0-9]+/;
 
     //if valid, then all handleUserInput
+
     //else do nothing
     //regular expressions
 
@@ -167,6 +175,9 @@ document.onkeyup = function (event) {
     handleUserWins(userGuess);
 
 }
+
+
+    // handleNextRound(userGuess);
 
 
 
