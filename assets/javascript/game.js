@@ -50,15 +50,15 @@ function startScreen() {
     // $('.gameMessage').text("Press any key to start");
 
     //Show lives remaining
-    $(".livesRemaining").text(lazyRappers.livesRemaining + " lives remaining");
+    $(".livesRemaining").text(lazyRappers.livesRemaining + " Lives Remaining");
 
     //Show incorrect letters
-    $('.incorrectLetters').text("Incorrect letters: " + lazyRappers.incorrectLetters);
+    $('.incorrectLetters').text("Incorrect Letters: " + lazyRappers.incorrectLetters);
 
     //Show wins and losses
-    $('.wins').text(lazyRappers.wins + " wins");
+    $('.wins').text(lazyRappers.wins + " Wins");
 
-    $('.losses').text(lazyRappers.losses + " losses");
+    $('.losses').text(lazyRappers.losses + " Losses");
 
 
 }
@@ -97,12 +97,12 @@ function handleUserInput(userGuess) {
             lazyRappers.incorrectLetters += userGuess;
 
             //Updating incorrect letters
-            $('.incorrectLetters').text("Incorrect letters: " + lazyRappers.incorrectLetters);
+            $('.incorrectLetters').text("Incorrect Letters: " + lazyRappers.incorrectLetters);
             console.log("incorrect letter");
 
             //Updating lives remaining
             lazyRappers.livesRemaining--;
-            $('.livesRemaining').text(lazyRappers.livesRemaining + " lives remaining");
+            $('.livesRemaining').text(lazyRappers.livesRemaining + " Lives Remaining");
             console.log("you guessed wrong");
 
             }
@@ -139,7 +139,7 @@ function handleUserWins(userGuess) {
             console.log("round finished");
 
         lazyRappers.wins++;
-        $('.wins').text(lazyRappers.wins + " wins");
+        $('.wins').text(lazyRappers.wins + " Wins");
         console.log("added wins");
         }
     }
@@ -166,7 +166,7 @@ document.onkeyup = function (event) {
     //handle only letters and numbers
     var onlyLettersNumbers = /[a-z][0-9]+/;
 
-    //if valid, then all handleUserInput
+    // if valid, then all handleUserInput
     // if (lazyRappers.currentWord === onlyLettersNumbers) {
     //     lazyRappers.currentWord -= 1;
     // } else {
