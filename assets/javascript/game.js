@@ -43,22 +43,22 @@ function startGame() {
 //Render start screen
 function startScreen() {
     //Show the display word on the screen
-    $('#displayWord').text(lazyRappers.displayWord);
+    $('.displayWord').text(lazyRappers.displayWord);
 
 
     //Show message to "press any key to start"
-    $('.gameMessage').text("Press any key to start");
+    // $('.gameMessage').text("Press any key to start");
 
     //Show lives remaining
-    $("#livesRemaining").text(lazyRappers.livesRemaining + " lives remaining");
+    $(".livesRemaining").text(lazyRappers.livesRemaining + " lives remaining");
 
     //Show incorrect letters
-    $('#incorrectLetters').text("Incorrect letters: " + lazyRappers.incorrectLetters);
+    $('.incorrectLetters').text("Incorrect letters: " + lazyRappers.incorrectLetters);
 
     //Show wins and losses
-    $('#wins').text(lazyRappers.wins + " wins");
+    $('.wins').text(lazyRappers.wins + " wins");
 
-    $('#losses').text(lazyRappers.losses + " losses");
+    $('.losses').text(lazyRappers.losses + " losses");
 
 
 }
@@ -90,19 +90,19 @@ function handleUserInput(userGuess) {
             lazyRappers.displayWord = temp.join('');
 
             //updating the display word
-            $('#displayWord').text(lazyRappers.displayWord);
+            $('.displayWord').text(lazyRappers.displayWord);
 
         //Incorrect letter
         } else if (lazyRappers.incorrectLetters.indexOf(userGuess) == -1) {
             lazyRappers.incorrectLetters += userGuess;
 
             //Updating incorrect letters
-            $('#incorrectLetters').text("Incorrect letters: " + lazyRappers.incorrectLetters);
+            $('.incorrectLetters').text("Incorrect letters: " + lazyRappers.incorrectLetters);
             console.log("incorrect letter");
 
             //Updating lives remaining
             lazyRappers.livesRemaining--;
-            $('#livesRemaining').text(lazyRappers.livesRemaining + " lives remaining");
+            $('.livesRemaining').text(lazyRappers.livesRemaining + " lives remaining");
             console.log("you guessed wrong");
 
             }
@@ -139,7 +139,7 @@ function handleUserWins(userGuess) {
             console.log("round finished");
 
         lazyRappers.wins++;
-        $('#wins').text(lazyRappers.wins + " wins");
+        $('.wins').text(lazyRappers.wins + " wins");
         console.log("added wins");
         }
     }
@@ -167,11 +167,11 @@ document.onkeyup = function (event) {
     var onlyLettersNumbers = /[a-z][0-9]+/;
 
     //if valid, then all handleUserInput
-    if (onlyLettersNumbers == lazyRappers.currentWord[i]) {
-        return;
-    } else {
-       
-    }
+    // if (lazyRappers.currentWord === onlyLettersNumbers) {
+    //     lazyRappers.currentWord -= 1;
+    // } else {
+    //     alert("Incorrect character");       
+    // }
 
     //else do nothing
     //regular expressions

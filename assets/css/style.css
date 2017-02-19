@@ -1,3 +1,51 @@
-#displayWord {
+#Hangman {
+	color: #ffffff;
+	font-size: 36px;
+	text-align: center;
+	font-family: "Ariel", sans-serif;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+body {
+	background-color: #000000;
+	font-family: "Ariel", sans-serif;
+	text-align: center;
+	line-height: 3em;
+}
+
+#container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.displayWord {
+	font-size: 50px;
     letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.usedLetters {
+	color: #ffffff;
+	font-size: 26px;
+}
+
+.livesRemaining {
+	color: #ffffff;
+	font-size: 26px;	
+}
+
+.incorrectLetters {
+	color: #ffffff;
+	font-size: 26px;	
+}
+
+.wins  {
+	color: #ffffff;
+	font-size: 26px;	
+}
+
+.losses  {
+	color: #ffffff;
+	font-size: 26px;	
 }
