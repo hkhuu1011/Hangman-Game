@@ -111,15 +111,44 @@ function handleUserInput(userGuess) {
 
 }
 
-//Handling wins, load next round
+//Updating losses when lives are at 0
+function handleUserLosses(userGuess) {
+    console.log(userGuess);
+
+    //If lives hits 0, updates losses
+    if(lazyRappers.livesRemaining == 0) {
+        lazyRappers.currentWord -= 1;
+        console.log("end round");
+
+        // lazyRappers.losses++;
+        // $('losses').text(lazyRappers.losses + " losses");
+        // console.log("added losses");
+    }
+    
+
+}
+
+
+//Updating wins when rapper is guessed right
 function handleUserWins(userGuess) {
     console.log(userGuess);
 
-    //If the rapper is guessed right, go to next round
+    //If the rapper is guessed right, update wins
+    for (var i = 0; i < lazyRappers.currentWord.length; i++) {
+        if(lazyRappers.currentWord == lazyRappers.displayWord) {
+            lazyRappers.currentWord -= 1;
+            console.log("round finished");
 
+        lazyRappers.wins++;
+        $('#wins').text(lazyRappers.wins + " wins");
+        console.log("added wins");
+        }
+    }
+}
 
-    //Updating wins
-
+//Go to next round
+function handleNextRound(userGuess) {
+    console.log(userGuess);
 
 }
 
